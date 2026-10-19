@@ -10,7 +10,7 @@ app = FastAPI(title="Connect WebSocket Chat", version="1.0.0")
 
 # Set FRONTEND_ORIGINS on Render to your Vercel URL(s), comma-separated.
 # Example: https://your-chat.vercel.app
-raw_origins = os.getenv("FRONTEND_ORIGINS", "http://localhost:3000,http://127.0.0.1:5500")
+raw_origins = os.getenv("FRONTEND_ORIGINS", "http://localhost:3000,http://127.0.0.1:5500", "https://chit-chat-frontend-one.vercel.app/")
 allowed_origins = [origin.strip().rstrip("/") for origin in raw_origins.split(",") if origin.strip()]
 app.add_middleware(
     CORSMiddleware,
